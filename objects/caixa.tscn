@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ckrpv5nwm1dim"]
+
+[ext_resource type="Script" uid="uid://dh8g7rsq4mmeb" path="res://scripts/scriptBloco.gd" id="1_syjpr"]
+[ext_resource type="Texture2D" uid="uid://fid1hfo7gxx2" path="res://sprites/bloco.png" id="2_72s7e"]
+
+[node name="caixa" type="Node2D" unique_id=1804806869]
+script = ExtResource("1_syjpr")
+
+[node name="SpriteParede" type="Sprite2D" parent="." unique_id=1699260906]
+texture_filter = 1
+texture = ExtResource("2_72s7e")
