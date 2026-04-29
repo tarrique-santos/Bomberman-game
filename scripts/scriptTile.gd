@@ -1,17 +1,24 @@
 extends TileMapLayer
 
 @onready var blocos = $Blocos
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	var espacosUsados = self.get_used_cells()
-	var quantidadeEspacos = espacosUsados.size()
+	var espacosUsados = get_used_cells()
 	
-	for i in range(quantidadeEspacos):
-		var objeto = get_cell_source_id(espacosUsados[i])
+	for pos in espacosUsados:
+		var objeto = get_cell_source_id(pos)
 		
 		if objeto == 0:
 			var instBloco = load("res://objects/caixa.tscn").instantiate()
 			blocos.add_child(instBloco)
-			instBloco.position = self.map_to_local(espacosUsados[i])
+			
+			instBloco.position = map_to_local(pos) + Vector2(tile_set.tile_size) / 2
+			
+			var sprite = instBloco.get_node_or_null("Sprite2D")
+			
+			if sprite:
+				var index = randi_range(0, 3)
+				sprite.region_enabled = true
+				sprite.region_rect = Rect2(index * 32, 0, 32, 32)
 	
-	self.clear();
+	clear()
