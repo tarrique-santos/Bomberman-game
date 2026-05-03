@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b7fsko35bc4yu"]
+
+[ext_resource type="Texture2D" uid="uid://ommy3b8b5v5r" path="res://imagens/assets/capa.png" id="1_n6kxh"]
+
+[node name="TelaInicial" type="Node2D" unique_id=1575215728]
+
+[node name="Control" type="Control" parent="." unique_id=968161508]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -312.0
+offset_top = -323.0
+offset_right = 715.0
+offset_bottom = 700.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1330725426]
+layout_mode = 0
+offset_left = -219.0
+offset_top = -201.0
+offset_right = 805.0
+offset_bottom = 823.0
+texture = ExtResource("1_n6kxh")
+
+[node name="Button" type="Button" parent="Control" unique_id=1706425524]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 74.0
+offset_right = 542.0
+offset_bottom = 169.0
+text = "Jogar"
