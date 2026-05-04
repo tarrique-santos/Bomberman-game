@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://df26q1iemfj6k"]
+
+[ext_resource type="Texture2D" uid="uid://bed4fg6cws6sv" path="res://sprites/extremidade.png" id="1_xl3nq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ytho"]
+size = Vector2(16, 16)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_3ytho")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(4.7683716e-07, -4.7683716e-07)
+scale = Vector2(1.125, 1.125)
+texture = ExtResource("1_xl3nq")

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bnno441b7oomx"]
+[gd_scene load_steps=4 format=3 uid="uid://bnno441b7oomx"]
 
 [ext_resource type="Texture2D" uid="uid://bko11da7lw6xi" path="res://sprites/parede.png" id="1_gb73f"]
 [ext_resource type="Script" uid="uid://c8whdy6fgvwl7" path="res://scripts/blocos.gd" id="2_wr4tj"]
@@ -6,14 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr4tj"]
 size = Vector2(16, 14)
 
-[node name="Bloco" type="Node2D" unique_id=883032738]
+[node name="Bloco" type="Node2D"]
 
-[node name="Parede" type="Sprite2D" parent="." unique_id=68769764]
+[node name="Parede" type="Sprite2D" parent="."]
 position = Vector2(-8, -8)
 texture = ExtResource("1_gb73f")
 script = ExtResource("2_wr4tj")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Parede" unique_id=1578804795]
+[node name="StaticBody2D" type="StaticBody2D" parent="Parede"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede/StaticBody2D" unique_id=1530048161]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede/StaticBody2D"]
 shape = SubResource("RectangleShape2D_wr4tj")

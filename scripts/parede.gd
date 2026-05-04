@@ -15,3 +15,6 @@ func _ready() -> void:
 			instanBloco.position = map_to_local(pos) + Vector2(tile_set.tile_size) / 2
 	
 	clear()
+	
+func destroy():
+	queue_free()

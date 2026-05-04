@@ -5,3 +5,6 @@ extends Node
 func _ready() -> void:
 	if(randi_range(0, 100) >= 85):
 		self.queue_free()	
+
+func destroy():
+	queue_free()

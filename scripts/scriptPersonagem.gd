@@ -1,30 +1,37 @@
 extends CharacterBody2D
 
 const SPEED = 200
+var pode_colocar_bomba = true
+
+
+@export var bomb_scene: PackedScene
 
 @onready var sprite = $AnimatedSprite2D
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	get_input()
-	animate()
+
 	move_and_slide()
+	if Input.is_key_pressed(KEY_SPACE) and pode_colocar_bomba:
+		place_bomb()
 
 func get_input():
 	var inputD = Input.get_vector("Esquerda", "Direita", "Cima", "Baixo")
 	
 	velocity = inputD * SPEED
 
-func animate():
-	if(velocity.x > 0):
-		sprite.play("lado")
-		#sprite.scale = Vector2(-1, 1)
-	elif(velocity.x < 0):
-		sprite.play("lado")
-		#sprite.scale = Vector2(1, 1)
-	elif(velocity.y > 0):
-		sprite.play("baixo")
-		#sprite.scale = Vector2(-1, 1)
-	elif(velocity.y < 0):
-		sprite.play("cima")
-		#sprite.scale = Vector2(-1, 1)
-	else:
-		sprite.pause()
+
+		
+		
+func place_bomb():
+	pode_colocar_bomba = false
+	
+	print("CRIANDO BOMBA")
+	var bomb = bomb_scene.instantiate()
+	bomb.position = global_position
+	get_parent().add_child(bomb)
+	
+	await get_tree().create_timer(1.0).timeout
+	pode_colocar_bomba = true
+	
+func _ready():
+	print("PLAYER FUNCIONANDO")
