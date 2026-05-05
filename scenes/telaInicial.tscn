@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://b7fsko35bc4yu"]
+
+[ext_resource type="Texture2D" uid="uid://cg8t83rd8ym26" path="res://imagens/fundoJogo.png" id="1_wqc7p"]
+[ext_resource type="Script" uid="uid://ct3dfdxho6gso" path="res://scripts/scriptBotao.gd" id="2_23bl3"]
+
+[node name="TelaInicial" type="Node2D" unique_id=452064503]
+position = Vector2(-129, -1)
+
+[node name="Control" type="Control" parent="." unique_id=453144388]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=171034871]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 34.4
+anchor_bottom = 25.6
+texture = ExtResource("1_wqc7p")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=788972354]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 34.639
+anchor_bottom = 25.626001
+offset_left = 683.0
+offset_top = 331.0
+offset_right = -539.56006
+offset_bottom = -547.04004
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=334273126]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 576.0
+offset_top = 466.0
+offset_right = 786.0
+offset_bottom = 613.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=1482154820]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Jogar"
+script = ExtResource("2_23bl3")
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer" unique_id=847605256]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Sair
+"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=310163308]
+position = Vector2(693, 369)
+zoom = Vector2(0.88, 0.88)
+
+[connection signal="pressed" from="Control/VBoxContainer/Button" to="Control/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Button2" to="Control/VBoxContainer/Button" method="_fecharJogo"]
