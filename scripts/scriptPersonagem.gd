@@ -6,7 +6,6 @@ var pode_colocar_bomba = true
 
 @export var bomb_scene: PackedScene
 
-@onready var sprite = $AnimatedSprite2D
 func _physics_process(_delta: float) -> void:
 	get_input()
 
@@ -18,9 +17,6 @@ func get_input():
 	var inputD = Input.get_vector("Esquerda", "Direita", "Cima", "Baixo")
 	
 	velocity = inputD * SPEED
-
-
-		
 		
 func place_bomb():
 	pode_colocar_bomba = false
@@ -35,3 +31,6 @@ func place_bomb():
 	
 func _ready():
 	print("PLAYER FUNCIONANDO")
+
+func morrer():
+	get_tree().change_scene_to_file("res://scenes/telaInicial.tscn")

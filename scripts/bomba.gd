@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var timer = $Timer
 
+
 func _ready():
 	timer.timeout.connect(explode)
 
@@ -40,10 +41,21 @@ func create_explosion():
 
 		for r in result:
 			var obj = r.collider
-			
-			if obj.get_parent() and obj.get_parent().has_method("destroy"):
+	
+			if obj and obj.get_parent() and obj.get_parent().has_method("destroy"):
 				obj.get_parent().destroy()
+		
+			if obj and obj.is_in_group("player"):
+				obj.morrer()
+				return  # 💥 PARA TUDO AQUI
+	
+			if obj and obj.get_parent() and obj.get_parent().has_method("destroy"):
+				obj.get_parent().destroy()
+		
+			if obj and obj.is_in_group("player"):
+				obj.morrer()
 
+			
 		# TIMER PRA SUMIR
 		var t = Timer.new()
 		t.wait_time = 0.3
@@ -52,3 +64,4 @@ func create_explosion():
 
 		explosion.add_child(t)
 		t.timeout.connect(func(): explosion.queue_free());
+		

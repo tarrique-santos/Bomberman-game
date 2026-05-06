@@ -62,7 +62,7 @@ script = ExtResource("6_sgiuo")
 position = Vector2(216, 217)
 zoom = Vector2(1.3, 1.3)
 
-[node name="personagem" type="CharacterBody2D" parent="Game" unique_id=516618250]
+[node name="personagem" type="CharacterBody2D" parent="Game" unique_id=516618250 groups=["player"]]
 position = Vector2(35, 35)
 script = ExtResource("7_d3qlk")
 bomb_scene = ExtResource("8_vurai")
@@ -80,13 +80,13 @@ offset_bottom = 7.0
 color = Color(0.15294118, 1, 1, 0.48235294)
 
 [node name="inimigo" parent="." unique_id=1609040835 groups=["Inimigo"] instance=ExtResource("9_l65ow")]
-position = Vector2(392, 40)
+position = Vector2(398, 40)
 
 [node name="inimigo2" parent="." unique_id=473352684 groups=["Inimigo"] instance=ExtResource("9_l65ow")]
-position = Vector2(390, 391)
+position = Vector2(388, 392)
 
 [node name="inimigo3" parent="." unique_id=1578086442 groups=["Inimigo"] instance=ExtResource("9_l65ow")]
-position = Vector2(41, 393)
+position = Vector2(33, 392)
 
 [node name="GameManager" type="Node" parent="." unique_id=457756792 groups=["manager"]]
 script = ExtResource("10_mv8rj")
